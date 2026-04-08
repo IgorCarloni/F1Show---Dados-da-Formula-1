@@ -1,0 +1,156 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  border: 1px solid #2a2a4a;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #e10600;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.hero-meta {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+}
+
+.hero-location {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.winner-card {
+  background: linear-gradient(135deg, #1a1a2e, #2a1a1a);
+  border: 1px solid #e10600;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.winner-label {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e10600;
+  margin-bottom: 0.5rem;
+}
+
+.winner-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.winner-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: #2a2a4a;
+  color: #ccc;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+}
+
+.btn-primary {
+  background: #e10600;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #c00500;
+}
+
+.podium h2 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.podium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.podium-card {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.podium-card:hover {
+  transform: translateY(-4px);
+  border-color: #e10600;
+}
+
+.podium-pos {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.podium-driver {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.podium-team {
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.podium-pts {
+  color: #e10600;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.5rem; }
+  .podium-grid { grid-template-columns: 1fr; }
+}

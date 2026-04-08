@@ -1,0 +1,95 @@
+.results-page {
+  padding: 2rem 0;
+}
+
+.results-header {
+  margin-bottom: 2rem;
+}
+
+.results-header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.results-header p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.results-date {
+  margin-top: 0.3rem;
+  color: #666 !important;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #2a2a4a;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.results-table thead tr {
+  background: #1a1a2e;
+  border-bottom: 2px solid #e10600;
+}
+
+.results-table th {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  color: #aaa;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.result-row {
+  background: #12121f;
+  border-bottom: 1px solid #1e1e35;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.result-row:hover {
+  background: #1a1a2e;
+}
+
+.result-row td {
+  padding: 0.85rem 1rem;
+  color: #ccc;
+}
+
+.pos {
+  font-weight: 700;
+  color: #e10600 !important;
+  font-size: 1rem;
+}
+
+.driver-name {
+  font-weight: 600;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.driver-code {
+  font-size: 0.72rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.center {
+  text-align: center;
+}
+
+.pts {
+  font-weight: 700;
+  color: #e10600 !important;
+}
