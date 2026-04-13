@@ -2,6 +2,7 @@
 
 Aplicação web para acompanhar resultados, classificações e estatísticas da Fórmula 1, consumindo a [Ergast Mirror API](https://api.jolpi.ca/ergast/f1).
 
+Acesse pelo link https://f1-show-dados-da-formula-1.vercel.app
 ---
 
 ## 📱 Telas
