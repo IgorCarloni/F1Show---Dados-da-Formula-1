@@ -1,3 +1,14 @@
+.welcome-banner {
+  background: linear-gradient(90deg, #e10600, #a00400);
+  color: #fff;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 .home {
   display: flex;
   flex-direction: column;

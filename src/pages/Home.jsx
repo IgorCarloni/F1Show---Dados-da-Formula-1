@@ -14,6 +14,9 @@ export default function Home() {
 
   return (
     <div className="home">
+      <div className="welcome-banner">
+        🏎️ Bem vindo a F1 Show onde a velocidade não para!
+      </div>
       <section className="hero">
         <div className="hero-badge">Última Corrida</div>
         <h1>{race.raceName}</h1>

@@ -1,21 +1,17 @@
 # 🏎️ F1 Show
 
-Aplicação web em React que exibe dados em tempo real da Fórmula 1, consumindo a API pública [Ergast Developer API](http://ergast.com/mrd/).
+Aplicação web para acompanhar resultados, classificações e estatísticas da Fórmula 1, consumindo a [Ergast Mirror API](https://api.jolpi.ca/ergast/f1).
 
 ---
 
-## 🚀 Demo
+## 📱 Telas
 
-> Acesse em produção: **[https://f1show.vercel.app](https://f1show.vercel.app)** *(após deploy)*
-
----
-
-## 📸 Páginas
-
-| Página | Rota | Descrição |
+| Tela | Rota | Descrição |
 |---|---|---|
-| Home | `/` | Resumo da última corrida, vencedor e pódio |
-| Resultados | `/results` | Tabela completa com todos os pilotos |
+| Início | `/` | Banner de boas-vindas, última corrida e pódio |
+| Resultados | `/results` | Tabela completa da última corrida |
+| Temporadas | `/season` | Seletor de ano + lista de corridas + resultados |
+| Classificação | `/standings` | Campeonato de pilotos e construtores por ano |
 | Piloto | `/driver/:driverId` | Estatísticas e histórico do piloto na temporada |
 
 ---
@@ -24,128 +20,107 @@ Aplicação web em React que exibe dados em tempo real da Fórmula 1, consumindo
 
 | Tecnologia | Versão | Uso |
 |---|---|---|
-| [React](https://react.dev/) | 18 | Biblioteca de UI |
-| [React Router DOM](https://reactrouter.com/) | 6 | Roteamento SPA com rotas dinâmicas |
-| [Vite](https://vitejs.dev/) | 4 | Bundler e servidor de desenvolvimento |
-| [Ergast API](http://ergast.com/mrd/) | — | Dados da Fórmula 1 |
+| [React](https://react.dev/) | 18.2+ | Framework de UI |
+| [React Router DOM](https://reactrouter.com/) | 6.22+ | Roteamento SPA |
+| [Vite](https://vitejs.dev/) | 4.5+ | Bundler e dev server |
+| [Ergast Mirror API](https://api.jolpi.ca) | — | Dados da Fórmula 1 |
 
 ---
 
-## 🏗️ Arquitetura da Aplicação
+## 🏗️ Arquitetura
 
 ```
-F1Show/
+f1show/
 ├── public/
-│   └── f1-icon.svg
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx        # Navegação global
-│   │   ├── Navbar.css
-│   │   └── States.jsx        # Componentes Loading e ErrorMsg
+│   │   ├── Navbar.jsx       # Barra de navegação
+│   │   └── States.jsx       # Componentes de Loading e Error
 │   ├── hooks/
-│   │   └── useF1Data.js      # Custom hooks para chamadas à API
+│   │   └── useF1Data.js     # Custom hooks para consumo da API
 │   ├── pages/
-│   │   ├── Home.jsx          # Rota: /
-│   │   ├── Home.css
-│   │   ├── Results.jsx       # Rota: /results
-│   │   ├── Results.css
-│   │   ├── DriverDetail.jsx  # Rota: /driver/:driverId  ← rota dinâmica
-│   │   ├── DriverDetail.css
-│   │   └── NotFound.jsx      # Rota: *
-│   ├── App.jsx               # Definição das rotas
-│   ├── main.jsx              # Entry point
-│   └── index.css             # Estilos globais
+│   │   ├── Home.jsx         # Rota: /
+│   │   ├── Results.jsx      # Rota: /results
+│   │   ├── Season.jsx       # Rota: /season
+│   │   ├── Standings.jsx    # Rota: /standings
+│   │   ├── DriverDetail.jsx # Rota: /driver/:driverId
+│   │   └── NotFound.jsx     # Rota: *
+│   ├── App.jsx              # Definição das rotas
+│   ├── main.jsx             # Entry point
+│   └── index.css            # Estilos globais
 ├── index.html
 ├── vite.config.js
-├── package.json
-└── README.md
+└── package.json
 ```
 
 ### Fluxo de dados
 
 ```
-Ergast API (HTTP)
-      │
-      ▼
-useF1Data.js (custom hooks)
-      │
-      ├──► Home.jsx        → exibe resumo + pódio
-      ├──► Results.jsx     → tabela completa
-      └──► DriverDetail.jsx → estatísticas do piloto
+Ergast Mirror API (HTTPS)
+        │
+        ▼
+  useF1Data.js (custom hooks)
+        │
+        ├──► Home          → última corrida + pódio
+        ├──► Results       → tabela completa
+        ├──► Season        → corridas por ano + resultados
+        ├──► Standings     → pilotos + construtores
+        └──► DriverDetail  → histórico do piloto
 ```
 
-### Roteamento
-
-```
-BrowserRouter
-└── Routes
-    ├── /                    → <Home />
-    ├── /results             → <Results />
-    ├── /driver/:driverId    → <DriverDetail />   ← dinâmica
-    └── *                    → <NotFound />
-```
+> O proxy configurado no `vite.config.js` redireciona `/ergast` para `https://api.jolpi.ca`, evitando problemas de CORS em desenvolvimento.
 
 ---
 
-## ⚙️ Como rodar localmente
+## ⚙️ Como rodar
 
 ### Pré-requisitos
 
 - [Node.js](https://nodejs.org/) >= 18
 - npm >= 9
 
-### Instalação
+### Instalar dependências
 
 ```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/f1show.git
-cd f1show
-
-# Instale as dependências
 npm install
+```
 
-# Inicie o servidor de desenvolvimento
+### Rodar em desenvolvimento
+
+```bash
 npm run dev
 ```
 
-Acesse: [http://localhost:5173](http://localhost:5173)
+A aplicação estará disponível em `http://localhost:5173`.
 
 ### Build para produção
 
 ```bash
 npm run build
-npm run preview   # testar o build localmente
 ```
 
----
+Os arquivos gerados ficam em `dist/`.
 
-## ☁️ Deploy
-
-### Vercel (recomendado)
+### Pré-visualizar o build
 
 ```bash
-npm install -g vercel
-vercel
-```
-
-### Netlify
-
-```bash
-npm run build
-# Faça upload da pasta dist/ no painel do Netlify
-# ou conecte o repositório GitHub
+npm run preview
 ```
 
 ---
 
 ## 🌐 API utilizada
 
-**Ergast Developer API** — `http://ergast.com/api/f1`
+**Ergast Mirror API** — `https://api.jolpi.ca/ergast/f1`
 
-| Endpoint | Uso |
-|---|---|
-| `/current/last/results.json` | Resultado da última corrida |
-| `/current/drivers/{id}/results.json` | Histórico do piloto na temporada |
+| Endpoint | Hook | Uso |
+|---|---|---|
+| `/current/last/results.json` | `useRaceResults` | Última corrida |
+| `/{year}/races.json` | `useSeasonRaces` | Corridas de uma temporada |
+| `/{year}/{round}/results.json` | `useRaceResult` | Resultado de uma corrida |
+| `/{year}/driverStandings.json` | `useDriverStandings` | Classificação de pilotos |
+| `/{year}/constructorStandings.json` | `useConstructorStandings` | Classificação de construtores |
+| `/current/drivers/{id}/results.json` | `useDriverHistory` | Histórico do piloto |
 
 ---
 

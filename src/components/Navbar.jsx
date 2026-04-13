@@ -15,6 +15,12 @@ export default function Navbar() {
         <NavLink to="/results" className={({ isActive }) => isActive ? 'active' : ''}>
           Resultados
         </NavLink>
+        <NavLink to="/season" className={({ isActive }) => isActive ? 'active' : ''}>
+          Temporadas
+        </NavLink>
+        <NavLink to="/standings" className={({ isActive }) => isActive ? 'active' : ''}>
+          Classificação
+        </NavLink>
       </div>
     </nav>
   )

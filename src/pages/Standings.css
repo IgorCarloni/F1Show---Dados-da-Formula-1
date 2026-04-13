@@ -1,0 +1,233 @@
+.standings-page {
+  padding: 2rem 0;
+}
+
+.standings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.standings-header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.standings-meta {
+  color: #666;
+  font-size: 0.88rem;
+}
+
+.year-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.year-selector label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.year-selector select {
+  background: #1a1a2e;
+  color: #fff;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.year-selector select:hover,
+.year-selector select:focus {
+  border-color: #e10600;
+}
+
+.standings-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #2a2a4a;
+  padding-bottom: 0;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.tab:hover {
+  color: #aaa;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom-color: #e10600;
+}
+
+.leader-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #1a1a2e, #2a1a1a);
+  border: 1px solid #e10600;
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.leader-banner strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.empty-msg {
+  color: #555;
+  text-align: center;
+  padding: 3rem;
+}
+
+.standings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.standing-row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.standing-row:hover {
+  border-color: #e10600;
+  transform: translateX(4px);
+}
+
+.standing-row.podium {
+  border-left: 3px solid #e10600;
+}
+
+.standing-pos {
+  font-size: 1.6rem;
+  text-align: center;
+  min-width: 36px;
+}
+
+.pos-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #555;
+}
+
+.standing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.standing-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.standing-code {
+  font-size: 0.7rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.standing-team {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.standing-bar-wrap {
+  height: 3px;
+  background: #2a2a4a;
+  border-radius: 2px;
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+
+.standing-bar {
+  height: 100%;
+  background: #e10600;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.standing-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  min-width: 80px;
+}
+
+.standing-pts {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.standing-pts span {
+  font-size: 0.75rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.standing-gap {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.wins-badge {
+  background: #e10600;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .standing-row {
+    grid-template-columns: 40px 1fr auto;
+    padding: 0.75rem 1rem;
+  }
+
+  .standings-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

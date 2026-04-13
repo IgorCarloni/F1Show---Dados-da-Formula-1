@@ -1,0 +1,243 @@
+.season-page {
+  padding: 2rem 0;
+}
+
+.season-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.season-header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.year-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.year-selector label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.year-selector select {
+  background: #1a1a2e;
+  color: #fff;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.year-selector select:focus,
+.year-selector select:hover {
+  border-color: #e10600;
+}
+
+.season-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.races-list {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.races-list h2 {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid #2a2a4a;
+  position: sticky;
+  top: 0;
+  background: #1a1a2e;
+}
+
+.race-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #1e1e35;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.race-item:hover {
+  background: #16213e;
+}
+
+.race-item.active {
+  background: #16213e;
+  border-left: 3px solid #e10600;
+}
+
+.race-round {
+  font-size: 0.7rem;
+  color: #e10600;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.race-name {
+  font-size: 0.88rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.race-date {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.race-detail {
+  background: #12121f;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  gap: 1rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.empty-state div {
+  font-size: 3rem;
+}
+
+.empty-msg {
+  color: #555;
+  font-size: 0.85rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.detail-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #1e1e35;
+}
+
+.detail-header h2 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.detail-header p {
+  color: #888;
+  font-size: 0.88rem;
+}
+
+.detail-date {
+  margin-top: 0.3rem;
+  color: #555 !important;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.results-table thead tr {
+  background: #1a1a2e;
+  border-bottom: 2px solid #e10600;
+}
+
+.results-table th {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  color: #aaa;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.result-row {
+  border-bottom: 1px solid #1e1e35;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.result-row:hover {
+  background: #1a1a2e;
+}
+
+.result-row td {
+  padding: 0.8rem 1rem;
+  color: #ccc;
+}
+
+.pos {
+  font-weight: 700;
+  color: #e10600 !important;
+}
+
+.driver-name {
+  font-weight: 600;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.driver-code {
+  font-size: 0.7rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.center {
+  text-align: center;
+}
+
+.pts {
+  font-weight: 700;
+  color: #e10600 !important;
+}
+
+@media (max-width: 768px) {
+  .season-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .races-list {
+    max-height: 300px;
+  }
+}
